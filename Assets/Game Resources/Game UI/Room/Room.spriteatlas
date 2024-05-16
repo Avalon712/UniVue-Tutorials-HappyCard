@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Room
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 8430b7964af4f704e8170261d573cde6, type: 3}
+    - {fileID: 2800000, guid: bc57055c60a363445b44a72dc63f3117, type: 3}
+    - {fileID: 2800000, guid: f6adf23126c432840ad1edc9e6ec6ed0, type: 3}
+    - {fileID: 2800000, guid: 47ef5b17f4769a540a4cacbaf1ee59d6, type: 3}
+    - {fileID: 2800000, guid: 158b7a3a74075544cbf941818855736c, type: 3}
+    - {fileID: 2800000, guid: 1526aeb9f5b5ded4da7424d01289b7f8, type: 3}
+    - {fileID: 2800000, guid: 212626e8128d55c40a709d3b0c630d8d, type: 3}
+    - {fileID: 2800000, guid: 5740e6ca51df7964fa6aa05d0c69aafa, type: 3}
+    - {fileID: 2800000, guid: 521f86aeec6f26646a7c15ea6498d023, type: 3}
+    - {fileID: 2800000, guid: 44c723a30c2162c4cb99c310c4803e6d, type: 3}
+    - {fileID: 2800000, guid: b85c35e3c94e4114da94d89eef8e7ae2, type: 3}
+    - {fileID: 2800000, guid: 351d343d680f3624b82ee21be592b527, type: 3}
+    - {fileID: 2800000, guid: 83f209dc1a2afac4b8cbc40cc396964e, type: 3}
+    - {fileID: 2800000, guid: aaf0c5c90b62e6b41bddfc603e86af45, type: 3}
+    - {fileID: 2800000, guid: ec5d94a1e0d5eaa489ce6cbc629c04a4, type: 3}
+    - {fileID: 2800000, guid: 28a64ab8e5b638d4597733bd29e62e3b, type: 3}
+    - {fileID: 2800000, guid: e33e89dd0b2a091468de22cf5b1d7466, type: 3}
+    - {fileID: 2800000, guid: b33869d2f6bc05f498bbf036aad3df9a, type: 3}
+    - {fileID: 2800000, guid: 8189778648839254e9845a4ced029858, type: 3}
+    - {fileID: 2800000, guid: 20a56bc1e3c761748bef35f5a7decb09, type: 3}
+    - {fileID: 2800000, guid: 915f2860a2918da49916d48c03e0cb8a, type: 3}
+    - {fileID: 2800000, guid: 052c6b2d555d70f46a6eb2f8c0016fd5, type: 3}
+    - {fileID: 2800000, guid: a8359a749f23e0147971328be352cd7c, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 915f2860a2918da49916d48c03e0cb8a: 21300000
+    - f6adf23126c432840ad1edc9e6ec6ed0: 21300000
+    - ec5d94a1e0d5eaa489ce6cbc629c04a4: 21300000
+    - 20a56bc1e3c761748bef35f5a7decb09: 21300000
+    - b33869d2f6bc05f498bbf036aad3df9a: 21300000
+    - 44c723a30c2162c4cb99c310c4803e6d: 21300000
+    - b85c35e3c94e4114da94d89eef8e7ae2: 21300000
+    - a8359a749f23e0147971328be352cd7c: 21300000
+    - 8189778648839254e9845a4ced029858: 21300000
+    - 8430b7964af4f704e8170261d573cde6: 21300000
+    - 47ef5b17f4769a540a4cacbaf1ee59d6: 21300000
+    - 28a64ab8e5b638d4597733bd29e62e3b: 21300000
+    - 212626e8128d55c40a709d3b0c630d8d: 21300000
+    - 1526aeb9f5b5ded4da7424d01289b7f8: 21300000
+    - aaf0c5c90b62e6b41bddfc603e86af45: 21300000
+    - 158b7a3a74075544cbf941818855736c: 21300000
+    - 5740e6ca51df7964fa6aa05d0c69aafa: 21300000
+    - bc57055c60a363445b44a72dc63f3117: 21300000
+    - 83f209dc1a2afac4b8cbc40cc396964e: 21300000
+    - 052c6b2d555d70f46a6eb2f8c0016fd5: 21300000
+    - 351d343d680f3624b82ee21be592b527: 21300000
+    - e33e89dd0b2a091468de22cf5b1d7466: 21300000
+    - 521f86aeec6f26646a7c15ea6498d023: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 915f2860a2918da49916d48c03e0cb8a, type: 3}
+  - {fileID: 21300000, guid: f6adf23126c432840ad1edc9e6ec6ed0, type: 3}
+  - {fileID: 21300000, guid: ec5d94a1e0d5eaa489ce6cbc629c04a4, type: 3}
+  - {fileID: 21300000, guid: 20a56bc1e3c761748bef35f5a7decb09, type: 3}
+  - {fileID: 21300000, guid: b33869d2f6bc05f498bbf036aad3df9a, type: 3}
+  - {fileID: 21300000, guid: 44c723a30c2162c4cb99c310c4803e6d, type: 3}
+  - {fileID: 21300000, guid: b85c35e3c94e4114da94d89eef8e7ae2, type: 3}
+  - {fileID: 21300000, guid: a8359a749f23e0147971328be352cd7c, type: 3}
+  - {fileID: 21300000, guid: 8189778648839254e9845a4ced029858, type: 3}
+  - {fileID: 21300000, guid: 8430b7964af4f704e8170261d573cde6, type: 3}
+  - {fileID: 21300000, guid: 47ef5b17f4769a540a4cacbaf1ee59d6, type: 3}
+  - {fileID: 21300000, guid: 28a64ab8e5b638d4597733bd29e62e3b, type: 3}
+  - {fileID: 21300000, guid: 212626e8128d55c40a709d3b0c630d8d, type: 3}
+  - {fileID: 21300000, guid: 1526aeb9f5b5ded4da7424d01289b7f8, type: 3}
+  - {fileID: 21300000, guid: aaf0c5c90b62e6b41bddfc603e86af45, type: 3}
+  - {fileID: 21300000, guid: 158b7a3a74075544cbf941818855736c, type: 3}
+  - {fileID: 21300000, guid: 5740e6ca51df7964fa6aa05d0c69aafa, type: 3}
+  - {fileID: 21300000, guid: bc57055c60a363445b44a72dc63f3117, type: 3}
+  - {fileID: 21300000, guid: 83f209dc1a2afac4b8cbc40cc396964e, type: 3}
+  - {fileID: 21300000, guid: 052c6b2d555d70f46a6eb2f8c0016fd5, type: 3}
+  - {fileID: 21300000, guid: 351d343d680f3624b82ee21be592b527, type: 3}
+  - {fileID: 21300000, guid: e33e89dd0b2a091468de22cf5b1d7466, type: 3}
+  - {fileID: 21300000, guid: 521f86aeec6f26646a7c15ea6498d023, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - status_bg_common_0
+  - common_btn_color_brown_0
+  - txt_field_typing_0
+  - Status_Button_Frame
+  - Popup_TitleFrame_02
+  - Icon_PictoIcon_Close
+  - Icon_PictoIcon_Wifi
+  - Slider05_UserInfo_PictureFrame2
+  - Popup_TitleFrame_03
+  - Btn_Circle02
+  - frame2
+  - Popup_Frame
+  - Frame_TabMenuFrame_s
+  - Frame_TabMenuFrame_n
+  - txt_field_normal_0
+  - Frame_Square01_White
+  - Frame_UserPicture_Small1
+  - Btn_MainButton_Bluegreen
+  - Image_Iconscene_Samplearea
+  - status_bg_color_0
+  - Icon_PictoIcon_Cancel
+  - common_popup_title_00_0
+  - Icon_ImageIcon_Check_l
+  m_RenderDataMap: {}
+  m_Tag: Room
+  m_IsVariant: 0

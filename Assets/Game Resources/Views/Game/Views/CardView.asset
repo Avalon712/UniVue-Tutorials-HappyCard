@@ -1,0 +1,243 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6477421528553831410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5303898d52d1744da5f7940211271e4, type: 3}
+  m_Name: ShowOutCardsView
+  m_EditorClassIdentifier: 
+  order: 0
+  viewName: ShowOutCardsView
+  viewLevel: 1
+  viewObjectPrefab: {fileID: 0}
+  transientTime: -1
+  initState: 0
+  forbidOpenOther: 0
+  draggable: 0
+  receiveDragInput: 
+  openTween: 0
+  openDuration: -1
+  closeTween: 0
+  closeDuration: -1
+  isMasterView: 0
+  masterViewName: 
+  rootViewName: CardView
+  nestedViews: []
+  content: '@Content'
+--- !u!114 &-5091465241095726640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5303898d52d1744da5f7940211271e4, type: 3}
+  m_Name: ListCardView
+  m_EditorClassIdentifier: 
+  order: 0
+  viewName: ListCardView
+  viewLevel: 3
+  viewObjectPrefab: {fileID: 0}
+  transientTime: -1
+  initState: 1
+  forbidOpenOther: 1
+  draggable: 0
+  receiveDragInput: 
+  openTween: 0
+  openDuration: -1
+  closeTween: 0
+  closeDuration: -1
+  isMasterView: 0
+  masterViewName: 
+  rootViewName: CardView
+  nestedViews: []
+  content: '@Content'
+--- !u!114 &-1301435944443354342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e884b0eeccaaae04b9f23e36e3aaaa3f, type: 3}
+  m_Name: OutCardOperationView
+  m_EditorClassIdentifier: 
+  order: 0
+  viewName: OutCardOperationView
+  viewLevel: 2
+  viewObjectPrefab: {fileID: 0}
+  transientTime: -1
+  initState: 0
+  forbidOpenOther: 0
+  draggable: 0
+  receiveDragInput: 
+  openTween: 0
+  openDuration: -1
+  closeTween: 0
+  closeDuration: -1
+  isMasterView: 0
+  masterViewName: 
+  rootViewName: CardView
+  nestedViews: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e884b0eeccaaae04b9f23e36e3aaaa3f, type: 3}
+  m_Name: CardView
+  m_EditorClassIdentifier: 
+  order: 8
+  viewName: CardView
+  viewLevel: 3
+  viewObjectPrefab: {fileID: 6417278491921654174, guid: e56f4c36a4163274297fecac2f4f50a0, type: 3}
+  transientTime: -1
+  initState: 1
+  forbidOpenOther: 0
+  draggable: 0
+  receiveDragInput: 
+  openTween: 0
+  openDuration: -1
+  closeTween: 0
+  closeDuration: -1
+  isMasterView: 0
+  masterViewName: 
+  rootViewName: 
+  nestedViews:
+  - {fileID: 7551429102836360634}
+  - {fileID: 2284753764257603265}
+  - {fileID: -5091465241095726640}
+  - {fileID: -1301435944443354342}
+  - {fileID: 8895208535220018521}
+  - {fileID: -6477421528553831410}
+  - {fileID: 3175537377182667410}
+--- !u!114 &2284753764257603265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e884b0eeccaaae04b9f23e36e3aaaa3f, type: 3}
+  m_Name: FightLandlordOptionalView
+  m_EditorClassIdentifier: 
+  order: 0
+  viewName: FightLandlordOptionalView
+  viewLevel: 2
+  viewObjectPrefab: {fileID: 0}
+  transientTime: -1
+  initState: 0
+  forbidOpenOther: 0
+  draggable: 0
+  receiveDragInput: 
+  openTween: 0
+  openDuration: -1
+  closeTween: 0
+  closeDuration: -1
+  isMasterView: 0
+  masterViewName: 
+  rootViewName: CardView
+  nestedViews: []
+--- !u!114 &3175537377182667410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e884b0eeccaaae04b9f23e36e3aaaa3f, type: 3}
+  m_Name: ZhanJinHuaOptionalView
+  m_EditorClassIdentifier: 
+  order: 0
+  viewName: ZhanJinHuaOptionalView
+  viewLevel: 2
+  viewObjectPrefab: {fileID: 0}
+  transientTime: -1
+  initState: 0
+  forbidOpenOther: 0
+  draggable: 0
+  receiveDragInput: 
+  openTween: 0
+  openDuration: -1
+  closeTween: 0
+  closeDuration: -1
+  isMasterView: 0
+  masterViewName: 
+  rootViewName: CardView
+  nestedViews: []
+--- !u!114 &7551429102836360634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e884b0eeccaaae04b9f23e36e3aaaa3f, type: 3}
+  m_Name: BanZiPaoOptionalView
+  m_EditorClassIdentifier: 
+  order: 0
+  viewName: BanZiPaoOptionalView
+  viewLevel: 2
+  viewObjectPrefab: {fileID: 0}
+  transientTime: -1
+  initState: 0
+  forbidOpenOther: 0
+  draggable: 0
+  receiveDragInput: 
+  openTween: 0
+  openDuration: -1
+  closeTween: 0
+  closeDuration: -1
+  isMasterView: 0
+  masterViewName: 
+  rootViewName: CardView
+  nestedViews: []
+--- !u!114 &8895208535220018521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e884b0eeccaaae04b9f23e36e3aaaa3f, type: 3}
+  m_Name: PrepareOperationView
+  m_EditorClassIdentifier: 
+  order: 0
+  viewName: PrepareOperationView
+  viewLevel: 2
+  viewObjectPrefab: {fileID: 0}
+  transientTime: -1
+  initState: 1
+  forbidOpenOther: 0
+  draggable: 0
+  receiveDragInput: 
+  openTween: 0
+  openDuration: -1
+  closeTween: 0
+  closeDuration: -1
+  isMasterView: 0
+  masterViewName: 
+  rootViewName: CardView
+  nestedViews: []

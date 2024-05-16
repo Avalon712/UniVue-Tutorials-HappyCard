@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Login
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 512
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 1fa568f6d0381b148b7492b94caf3307, type: 3}
+    - {fileID: 2800000, guid: fd5e56bdde032a94f8f201d49dc52228, type: 3}
+    - {fileID: 2800000, guid: 63d4c73e1ea5a51449e12b7d40496992, type: 3}
+    - {fileID: 2800000, guid: cd39b9c9491136a4cbd8ea9064df5729, type: 3}
+    - {fileID: 2800000, guid: 156bafc411e81c543aba4e1e2f5327b9, type: 3}
+    - {fileID: 2800000, guid: e4775e4ba015e9e49a6834b1dae1436c, type: 3}
+    - {fileID: 2800000, guid: 99cb8b40255f67a40bacd5be37be27e0, type: 3}
+    - {fileID: 2800000, guid: 430a39247821304419df7c7456179ca0, type: 3}
+    - {fileID: 2800000, guid: 9cc7dd8b4cfb7634b9e5ab375b1e0fe4, type: 3}
+    - {fileID: 2800000, guid: 53c1f58a8e51140479070e0f1c73b58a, type: 3}
+    - {fileID: 2800000, guid: de526e9ef2adcfd41a2808ce085019cc, type: 3}
+    - {fileID: 2800000, guid: 4bfe277c5eb8bf24093d734f92588cf2, type: 3}
+    - {fileID: 2800000, guid: a6369b59e21277b43abed89e06b0c571, type: 3}
+    - {fileID: 2800000, guid: 23e4b6c76b8918a409116ed5b924ec15, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 99cb8b40255f67a40bacd5be37be27e0: 21300000
+    - 430a39247821304419df7c7456179ca0: 21300000
+    - 156bafc411e81c543aba4e1e2f5327b9: 21300000
+    - 1fa568f6d0381b148b7492b94caf3307: 21300000
+    - 23e4b6c76b8918a409116ed5b924ec15: 21300000
+    - a6369b59e21277b43abed89e06b0c571: 21300000
+    - cd39b9c9491136a4cbd8ea9064df5729: 21300000
+    - 53c1f58a8e51140479070e0f1c73b58a: 21300000
+    - e4775e4ba015e9e49a6834b1dae1436c: 21300000
+    - 9cc7dd8b4cfb7634b9e5ab375b1e0fe4: 21300000
+    - 4bfe277c5eb8bf24093d734f92588cf2: 21300000
+    - fd5e56bdde032a94f8f201d49dc52228: 21300000
+    - 63d4c73e1ea5a51449e12b7d40496992: 21300000
+    - de526e9ef2adcfd41a2808ce085019cc: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 99cb8b40255f67a40bacd5be37be27e0, type: 3}
+  - {fileID: 21300000, guid: 430a39247821304419df7c7456179ca0, type: 3}
+  - {fileID: 21300000, guid: 156bafc411e81c543aba4e1e2f5327b9, type: 3}
+  - {fileID: 21300000, guid: 1fa568f6d0381b148b7492b94caf3307, type: 3}
+  - {fileID: 21300000, guid: 23e4b6c76b8918a409116ed5b924ec15, type: 3}
+  - {fileID: 21300000, guid: a6369b59e21277b43abed89e06b0c571, type: 3}
+  - {fileID: 21300000, guid: cd39b9c9491136a4cbd8ea9064df5729, type: 3}
+  - {fileID: 21300000, guid: 53c1f58a8e51140479070e0f1c73b58a, type: 3}
+  - {fileID: 21300000, guid: e4775e4ba015e9e49a6834b1dae1436c, type: 3}
+  - {fileID: 21300000, guid: 9cc7dd8b4cfb7634b9e5ab375b1e0fe4, type: 3}
+  - {fileID: 21300000, guid: 4bfe277c5eb8bf24093d734f92588cf2, type: 3}
+  - {fileID: 21300000, guid: fd5e56bdde032a94f8f201d49dc52228, type: 3}
+  - {fileID: 21300000, guid: 63d4c73e1ea5a51449e12b7d40496992, type: 3}
+  - {fileID: 21300000, guid: de526e9ef2adcfd41a2808ce085019cc, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Input_Field_Icon_User
+  - txt_field_normal_0
+  - Input_Field_Icon_Email
+  - Btn_Circle02
+  - Toggle_Check_Off
+  - Toggle_Check_On
+  - Icon_PictoIcon_Back
+  - common_popup_title_00_0
+  - Input_Field_Icon_Pw
+  - Popup_Frame
+  - Popup_TitleFrame_03
+  - Btn_MainButton_Bluegreen
+  - common_btn_color_brown_0
+  - Popup_TitleFrame_02
+  m_RenderDataMap: {}
+  m_Tag: Login
+  m_IsVariant: 0
