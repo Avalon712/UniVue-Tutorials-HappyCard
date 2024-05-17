@@ -6,6 +6,7 @@ using HappyCard.Network;
 using HappyCard.Network.Entities;
 using HappyCard.Utils;
 using HayypCard;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -147,7 +148,8 @@ namespace HappyCard
         //------------------------------------场景加载完成--------------------------------------------------
         private void OnSceneLoaded(Scene scene,LoadSceneMode mode)
         {
-            GameScene gameScene = (GameScene)scene.buildIndex;
+            //GameScene gameScene = (GameScene)scene.buildIndex; //emmmm，构建顺序不一致会导致bug....
+            GameScene gameScene = Enum.Parse<GameScene>(scene.name); 
             StartCoroutine(AsyncInitializeScene(gameScene));
         }
 

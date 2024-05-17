@@ -16,19 +16,14 @@ namespace HayypCard.Handlers
         public PlayerHandler(GamingInfo gamingInfo) 
         {
             _gamingInfo = gamingInfo;
-
-            SyncInfoResponseHandle handle = new SyncInfoResponseHandle(1);
-            handle.JustOneCall = false;
-
-            handle.AddResponseHandle(GameEvent.DealCards, ReceiveDealCards);
         }
 
         //-----------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 接收到发牌同步事件
+        /// 回合同步
         /// </summary>
-        private void ReceiveDealCards(SyncInfo syncInfo)
+        public void BoutSync(BoutRecord bout)
         {
 
         }
@@ -36,7 +31,7 @@ namespace HayypCard.Handlers
         //-----------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 本地同步
+        /// 本地同步发牌事件
         /// </summary>
         public void DealCards()
         {

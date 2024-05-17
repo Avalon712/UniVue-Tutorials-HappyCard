@@ -5,6 +5,7 @@ using HayypCard.Entities;
 using HayypCard.Enums;
 using HayypCard.Network.Entities;
 using HayypCard.Utils;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,10 @@ namespace HayypCard.Handlers
         /// 玩家选中的牌
         /// </summary>
         private List<ValueTuple<PokerCard,Image>> _selected;
+        /// <summary>
+        /// 上一个玩家出的牌
+        /// </summary>
+        private List<PokerCard> _lastPlayerOutCards; 
 
         public PlayerSelfHandler(GamingInfo gamingInfo) 
         {
@@ -43,31 +48,25 @@ namespace HayypCard.Handlers
             SyncInfoResponseHandle handle = new SyncInfoResponseHandle(1);
             handle.JustOneCall = false;
 
-            handle.AddResponseHandle(GameEvent.NoCallLandlord, ReceiveNoCallLandlord)
-                  .AddResponseHandle(GameEvent.NoBao, ReceiveNoBao);
+            handle.AddResponseHandle(GameEvent.BoutSync, ReceiveBoutSync);
         }
+
 
         //--------------------------------------------------------------------------------------------
 
-        private void ReceiveNoBao(SyncInfo info)
+        /// <summary>
+        /// 接收到回合同步事件
+        /// </summary>
+        private void ReceiveBoutSync(SyncInfo info)
         {
-            //判断是否到自己做选择
-            string nextPlayerId = info.Message;
-            if(nextPlayerId == _gamingInfo.PlayerID)
+            BoutRecord bout = JsonConvert.DeserializeObject<BoutRecord>(info.Message);
+            //同步到本地的其它玩家
+            using(var it = Vue.Event.GetRegisters<PlayerHandler>().GetEnumerator())
             {
-                Vue.Router.Open(nameof(GameUI.BanZiPaoOptionalView));
-            }
-        }
-
-        //--------------------------------------------------------------------------------------------
-
-        private void ReceiveNoCallLandlord(SyncInfo info)
-        {
-            //判断是否到自己做选择
-            string nextPlayerId = info.Message;
-            if (nextPlayerId == _gamingInfo.PlayerID)
-            {
-                Vue.Router.Open(nameof(GameUI.FightLandlordOptionalView));
+                while (it.MoveNext())
+                {
+                    it.Current.BoutSync(bout);
+                }
             }
         }
 
@@ -126,6 +125,8 @@ namespace HayypCard.Handlers
             //}
         }
 
+        //---------------------------------------------------------------------------------------------
+        //                                          UI事件                                           //
         //---------------------------------------------------------------------------------------------
 
         [EventCall(nameof(GameEvent.CallLandlord))]
@@ -236,6 +237,8 @@ namespace HayypCard.Handlers
             if (_selected.Count > 0)
             {
                 //1. 检查是否符合出牌规则
+                if (!CheckOutOutCards())
+                    Vue.Router.GetView<TipView>(nameof(GameUI.FastTipView)).Open("当前出牌不符合规则!");
 
                 //2. 显示出的牌以及将出的牌从手牌区移除
                 Dictionary<PokerCard, CardInfo> pokers = GameDataManager.Instance.Pokers;
@@ -323,5 +326,16 @@ namespace HayypCard.Handlers
             TweenBehavior.DoLocalMove(img.transform, 0.1f, p); //动画效果
         }
 
+        /// <summary>
+        /// 检查玩家出牌是否符合规则
+        /// </summary>
+        private bool CheckOutOutCards()
+        {
+            //1. 如果上一家没有人出牌则当前玩家可以随意进行出牌（只要符合当前的游戏规则）
+
+            //2. 如果上一家有人出牌则需要比较当前玩家所出的牌是否大于上家
+
+            return false;
+        }
     }
 }

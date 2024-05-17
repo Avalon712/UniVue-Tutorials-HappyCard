@@ -198,9 +198,14 @@
         Selected,
 
         /// <summary>
-        /// 出牌事件
+        /// 出牌事件 
         /// </summary>
         OutCard,
+
+        /// <summary>
+        /// 回合同步事件
+        /// </summary>
+        BoutSync,
 
         /// <summary>
         /// 不要

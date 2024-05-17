@@ -2,7 +2,7 @@
 namespace HayypCard.Enums
 {
     /// <summary>
-    /// 扑克牌的类型
+    /// 54张扑克牌
     /// </summary>
     public enum PokerCard
     {
