@@ -45,10 +45,10 @@ namespace HappyCard
             YooAssets.Initialize();
 
             //配置自动装配EventCall
-#if UNITY_EDITOR
+#if !ENABLE_IL2CPP
             //支持反射
             Vue.AutowireEventCalls();
-#elif ENABLE_IL2CPP //il2cpp的AOT编译
+#else       //il2cpp的AOT编译
             //不支持反射
             Vue.Instance.BuildAutowireInfos(typeof(LoginHandler), typeof(GameUpdateHandler));
 #endif
@@ -57,6 +57,8 @@ namespace HappyCard
         }
 
         //------------------------------------刚进入游戏进行的初始化---------------------------------------
+
+        #region 进入游戏
         private IEnumerator OnEnterGameApp()
         {
             //创建视图
@@ -81,7 +83,14 @@ namespace HappyCard
             //加载场景资源
             loadInfo.message = "场景资源加载中";
             //先加载公共资源
-            yield return AssetManager.Instance.AsyncLoadPublicAsset();
+            using(var it = AssetManager.Instance.AsyncLoadPublicAsset().GetEnumerator())
+            {
+                while (it.MoveNext())
+                {
+                    var op = it.Current;
+                    while (!op.IsDone) { yield return null; }
+                }
+            }
 
             loadInfo.message = "本地存档数据加载中";
             yield return GameDataManager.Instance.AsyncLoadLocalArchiveData();
@@ -99,6 +108,8 @@ namespace HappyCard
             //主动触发事件
             OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
         }
+
+        #endregion
 
         #region 检查游戏更新
         /// <summary>
@@ -129,7 +140,7 @@ namespace HappyCard
 
             return httpInfo;
         }
-        #endregion
+#endregion
 
         #region 游戏更新
         public void GameUpdate()
@@ -167,13 +178,28 @@ namespace HappyCard
 
             loadInfo.message = "场景加载中"; 
             //加载场景视图
-            yield return AssetManager.Instance.AsyncLoadScneViews(gameScene);
+            var operation = AssetManager.Instance.AsyncLoadScneViews(gameScene);
+
+            while (!operation.IsDone)
+            {
+                yield return null;
+            }
 
             //加载场景视图
             Vue.LoadViews(AssetManager.Instance.GetGameSceneViewConfig(gameScene));
 
             //加载每个场景额外的资产
-            yield return AssetManager.Instance.AsyncLoadScenExtraAsset(gameScene);
+            using(var it = AssetManager.Instance.AsyncLoadScenExtraAsset(gameScene).GetEnumerator())
+            {
+                while (it.MoveNext())
+                {
+                    var op = it.Current;
+                    while (!op.IsDone)
+                    {
+                        yield return null;
+                    }
+                }
+            }
 
             //装配场景下的EventCall
             Vue.AutowireAndUnloadEventCalls(gameScene.ToString());

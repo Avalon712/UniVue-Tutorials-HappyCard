@@ -18,7 +18,7 @@ namespace HappyCard.Entities
         private GameLevel _level;
         private float _bgmvolume = 1;
         private float _sfxvolume = 1;
-        private float _timer = 30;
+        private int _timer = 30;
 
         /// <summary>
         /// 游戏玩法
@@ -135,7 +135,7 @@ namespace HappyCard.Entities
         /// <summary>
         /// 每次允许玩家思考的时间，[30,120]
         /// </summary>
-        public float Timer
+        public int Timer
         {
             get => _timer;
             set
@@ -172,6 +172,7 @@ namespace HappyCard.Entities
             if(nameof(Gameplay).Equals(propertyName)){ Gameplay = (Gameplay) propertyValue; }
             else if(nameof(ShuffleMode).Equals(propertyName)){ ShuffleMode = (ShuffleMode) propertyValue; }
             else if(nameof(Level).Equals(propertyName)){ Level = (GameLevel) propertyValue; }
+            else if (nameof(Timer).Equals(propertyName)) { Timer = propertyValue; }
         }
 
         public override void UpdateModel(string propertyName, string propertyValue)
@@ -182,7 +183,6 @@ namespace HappyCard.Entities
         {
             if(nameof(BGMVolume).Equals(propertyName)){ BGMVolume = propertyValue; }
             else if(nameof(SFXVolume).Equals(propertyName)){ SFXVolume = propertyValue; }
-            else if(nameof(Timer).Equals(propertyName)){ Timer = propertyValue; }
         }
 
         public override void UpdateModel(string propertyName, bool propertyValue)

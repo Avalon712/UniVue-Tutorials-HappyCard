@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 1
   viewName: FastTipView
-  viewLevel: 1
+  viewLevel: 0
   viewObjectPrefab: {fileID: 6669073043515206705, guid: 8351187d5e0816e4384ce7c776637cb6, type: 3}
-  transientTime: -1
+  transientTime: 3
   initState: 0
   forbidOpenOther: 0
   draggable: 0

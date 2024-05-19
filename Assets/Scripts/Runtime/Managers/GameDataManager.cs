@@ -3,7 +3,6 @@ using HappyCard.Entities.Configs;
 using HappyCard.Utils;
 using HayypCard.Entities;
 using HayypCard.Enums;
-using HayypCard.Utils;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -13,7 +12,6 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.U2D;
 using UniVue.Utils;
-using static UnityEditor.Progress;
 
 namespace HappyCard.Managers
 {

@@ -48,19 +48,7 @@ namespace HayypCard.Handlers
             //2. 初始化准备计数器
             _prepareCounter = players.Count;
 
-            //3. 注册玩家处理器
-            List<GamingInfo> gamingInfos = GameDataManager.Instance.RoomInfo.PlayerGamingInfos;
-            for (int i = 0; i < gamingInfos.Count; i++)
-            {
-                if (gamingInfos[i].PlayerID == selfID)
-                {
-                    new PlayerSelfHandler(gamingInfos[i]);
-                }
-                else
-                {
-                    new PlayerHandler(gamingInfos[i]);
-                }
-            }
+  
         }
 
         /// <summary>
@@ -91,6 +79,9 @@ namespace HayypCard.Handlers
                 Player p = players[nextPlayerIndex];
                 GamingInfo gamingInfo = GameDataManager.Instance.RoomInfo.PlayerGamingInfos.Find(g => g.PlayerID == p.ID);
                 view.BindModel(gamingInfo, false);
+
+                //注册处理器
+                new PlayerHandler(gamingInfo, view.name);
 
                 //获取下一个玩家的位置索引
                 nextPlayerIndex = (nextPlayerIndex+1) % players.Count;

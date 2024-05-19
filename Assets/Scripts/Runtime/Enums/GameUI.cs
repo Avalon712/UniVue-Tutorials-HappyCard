@@ -210,5 +210,45 @@ namespace HappyCard.Enums
         /// 显示玩家的出牌、手牌、操作选项等的总视图
         /// </summary>
         CardView,
+
+        /// <summary>
+        /// 左边第一个玩家显示出牌的视图 -- LeftPlayerView1的嵌套视图
+        /// </summary>
+        LeftShowOutCardsView1,
+
+        /// <summary>
+        /// 左边第一个玩家的定时器视图 -- LeftPlayerView1的嵌套视图
+        /// </summary>
+        LeftTimerView1,
+
+        /// <summary>
+        ///  左边第二个玩家显示出牌的视图-- LeftPlayerView2的嵌套视图
+        /// </summary>
+        LeftShowOutCardsView2,
+
+        /// <summary>
+        /// 左边第二个玩家的定时器视图-- LeftPlayerView2的嵌套视图
+        /// </summary>
+        LeftTimerView2,
+
+        /// <summary>
+        /// 右边第一个玩家显示出牌的视图-- RightPlayerView1的嵌套视图
+        /// </summary>
+        RightShowOutCardsView1,
+
+        /// <summary>
+        /// 右边第一个玩家的定时器视图-- RightPlayerView1的嵌套视图
+        /// </summary>
+        RightTimerView1,
+
+        /// <summary>
+        ///  右边第二个玩家显示出牌的视图-- RightPlayerView2的嵌套视图
+        /// </summary>
+        RightShowOutCardsView2,
+
+        /// <summary>
+        /// 右边第二个玩家的定时器视图-- RightPlayerView2的嵌套视图
+        /// </summary>
+        RightTimerView2,
     }
 }

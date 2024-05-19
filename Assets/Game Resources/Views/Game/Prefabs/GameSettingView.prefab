@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 627564930928869634}
   toggleTransition: 0
   graphic: {fileID: 5188579255182709154}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1690177133074187798}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1273,6 +1273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1379394376056727754}
+  - component: {fileID: 1690177133074187798}
   m_Layer: 5
   m_Name: '@Shuffle'
   m_TagString: Untagged
@@ -1303,6 +1304,19 @@ RectTransform:
   m_AnchoredPosition: {x: 354, y: -740}
   m_SizeDelta: {x: 800, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1690177133074187798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2915906593673518402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowSwitchOff: 0
 --- !u!1 &2922370148687141269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,7 +1708,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5630223468684270885}
   toggleTransition: 0
   graphic: {fileID: 6289925259092000429}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1690177133074187798}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []

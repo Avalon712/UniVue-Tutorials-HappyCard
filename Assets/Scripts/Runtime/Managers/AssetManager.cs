@@ -50,7 +50,7 @@ namespace HappyCard.Managers
         /// </summary>
         public List<Product> GetProducts(ProductType productType)
         {
-            ResourcePackage package = YooAssets.GetPackage(nameof(Product));
+            ResourcePackage package = YooAssets.GetPackage(productDataPackageName);
             AssetInfo[] assetInfos = package.GetAssetInfos(productType.ToString());
             List<Product> products = new List<Product>(assetInfos.Length);
             for (int i = 0; i < assetInfos.Length; i++)
@@ -119,12 +119,12 @@ namespace HappyCard.Managers
         /// <summary>
         /// 异步加载场景的视图配置
         /// </summary>
-        public IEnumerator AsyncLoadScneViews(GameScene scene)
+        public InitializationOperation AsyncLoadScneViews(GameScene scene)
         {
             EPlayMode playMode = GameRunner.Instance.playMode;
 
             //每个场景都必须加载场景视图配置 --- 这里面包含了视图的图片等
-            yield return InitResourcePackage(YooAssets.CreatePackage(scene.ToString()), playMode);
+            return InitResourcePackage(YooAssets.CreatePackage(scene.ToString()), playMode);
         }
 
         //-------------------------------------------------------------------------------------------------
@@ -132,7 +132,7 @@ namespace HappyCard.Managers
         /// <summary>
         /// 加载整个游戏中都需要使用到的资产，只能初始化一次
         /// </summary>
-        public IEnumerator AsyncLoadPublicAsset()
+        public IEnumerable<InitializationOperation> AsyncLoadPublicAsset()
         {
             EPlayMode playMode = GameRunner.Instance.playMode;
             //加载头像信息
@@ -148,13 +148,13 @@ namespace HappyCard.Managers
         /// <summary>
         /// 异步加载每个场景额外需要的资产
         /// </summary>
-        public IEnumerator AsyncLoadScenExtraAsset(GameScene scene)
+        public IEnumerable<InitializationOperation> AsyncLoadScenExtraAsset(GameScene scene)
         {
             EPlayMode playMode = GameRunner.Instance.playMode;
             switch (scene)
             {
                 case GameScene.Login:
-                    
+                    //None
                     break;
 
                 case GameScene.Main:
@@ -165,7 +165,7 @@ namespace HappyCard.Managers
                     break;
 
                 case GameScene.Room:
-
+                    //None
                     break;
 
                 case GameScene.Game:
@@ -173,6 +173,7 @@ namespace HappyCard.Managers
                     break;
             }
         }
+
 
         //---------------------------------------卸载场景中的资源（不包含公共资源）-----------------------------------------
 
@@ -183,25 +184,25 @@ namespace HappyCard.Managers
         {
             //无论哪个场景都要卸载掉视图资产
             string sceneName = scene.ToString();
-            ResourcePackage package = YooAssets.GetPackage(sceneName);
-            package?.ForceUnloadAllAssets();
+            YooAssets.DestroyPackage(sceneName);
 
             switch (scene)
             {
                 case GameScene.Login:
                     break;
+
                 case GameScene.Main:
                     //卸载商店商品资产包
-                    YooAssets.GetPackage(productDataPackageName).ForceUnloadAllAssets();
+                    YooAssets.DestroyPackage(productDataPackageName);
                     //卸载商店商品的图标
-                    YooAssets.GetPackage(productIconPackageName).ForceUnloadAllAssets();
+                    YooAssets.DestroyPackage(productIconPackageName);
                     break;
                 case GameScene.Room:
 
                     break;
                 case GameScene.Game:
                     //卸载扑克牌的资产
-                    YooAssets.GetPackage(pokerIconPackageName).ForceUnloadAllAssets();
+                    YooAssets.DestroyPackage(pokerIconPackageName);
                     break;
             }
 
@@ -210,31 +211,50 @@ namespace HappyCard.Managers
 
         //------------------------------------异步初始化资源包--------------------------------------------
 
-        public IEnumerator InitResourcePackage(ResourcePackage package,EPlayMode playMode)
+        public InitializationOperation InitResourcePackage(ResourcePackage package,EPlayMode playMode)
         {
             switch (playMode)
             {
                 case EPlayMode.EditorSimulateMode:
-                    yield return InitResourcePackageInEditor(package);
-                    break;
+                    return InitResourcePackageInEditor(package);
                 case EPlayMode.OfflinePlayMode:
-                    break;
+                    return InitResourcePackageInOffline(package);
                 case EPlayMode.HostPlayMode:
-                    break;
-                case EPlayMode.WebPlayMode:
-                    break;
+                    return InitResourcePackageInHostServer(package);
             }
+
+            return null;
         }
 
         //----------------------------------在编辑器模式下加载资源包----------------------------------------------
 
         //编辑器下
-        private IEnumerator InitResourcePackageInEditor(ResourcePackage package)
+        private InitializationOperation InitResourcePackageInEditor(ResourcePackage package)
         {
             var initParameters = new EditorSimulateModeParameters();
             var simulateManifestFilePath = EditorSimulateModeHelper.SimulateBuild(EDefaultBuildPipeline.BuiltinBuildPipeline, package.PackageName);
             initParameters.SimulateManifestFilePath = simulateManifestFilePath;
-            yield return package.InitializeAsync(initParameters);
+            return package.InitializeAsync(initParameters);
         }
+
+        //--------------------------------------单机模式下----------------------------------------------------------
+
+        /// <summary>
+        /// 这种模式下要将ab包打在StreamingAssets目录下
+        /// </summary>
+        private InitializationOperation InitResourcePackageInOffline(ResourcePackage package)
+        {
+            var initParameters = new OfflinePlayModeParameters();
+            return package.InitializeAsync(initParameters);
+        }
+
+        //---------------------------------------服务器主机----------------------------------------------------------
+
+        private InitializationOperation InitResourcePackageInHostServer(ResourcePackage package)
+        {
+            //TODO
+            return null;
+        }
+
     }
 }

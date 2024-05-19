@@ -44,7 +44,7 @@ namespace HayypCard.Enums
         /// <summary>
         /// 三带一对
         /// </summary>
-        ThreeeWihtDouble,
+        ThreeWihtDouble,
 
         /// <summary>
         /// 四带二
@@ -59,12 +59,17 @@ namespace HayypCard.Enums
         /// <summary>
         /// 四带两对
         /// </summary>
-        FourWithDuplicateDouble,
+        FourWithTwoDouble,
 
         /// <summary>
         /// 飞机什么都不带
         /// </summary>
         AeroplaneWithNone,
+
+        /// <summary>
+        /// 飞机带两张牌
+        /// </summary>
+        AeroplaneWithTwo,
 
         /// <summary>
         /// 飞机带三张单牌
@@ -80,6 +85,11 @@ namespace HayypCard.Enums
         /// 飞机带五张单牌
         /// </summary>
         AeroplaneWithFive,
+
+        /// <summary>
+        /// 飞机带两对
+        /// </summary>
+        AeroplaneWithTwoDouble,
 
         /// <summary>
         /// 飞机带三对

@@ -2,6 +2,7 @@
 using HappyCard.Enums;
 using HappyCard.Managers;
 using HappyCard.Network.Entities;
+using HayypCard.Network.Entities;
 using System;
 
 namespace HappyCard.Network
@@ -11,6 +12,7 @@ namespace HappyCard.Network
     /// </summary>
     public sealed class GameOfflineService 
     {
+
         public void SimulateHttpServer<R1, R2>(HttpInfo<R1, R2> httpInfo, GameEvent gameEvent) where R1 : class where R2 : class
         {
             try
@@ -47,6 +49,13 @@ namespace HappyCard.Network
             }
         }
 
+        /// <summary>
+        /// 单机模拟
+        /// </summary>
+        public void SimulateSync(SyncInfo syncInfo)
+        {
+
+        }
 
         //------------------------------------------------------------------------------------------------
 

@@ -156,6 +156,11 @@ namespace HappyCard.Entities
         public List<PokerCard> OutCards { get; set; }
 
         /// <summary>
+        /// 当前回合出牌的类型的类型码
+        /// </summary>
+        public int PokerTypeCode { get; set; }
+
+        /// <summary>
         /// 炸金花中玩家跟注的金币数量
         /// </summary>
         public int FollowCoin { get; set; }

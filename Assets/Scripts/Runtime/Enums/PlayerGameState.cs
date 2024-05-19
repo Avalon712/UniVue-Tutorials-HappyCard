@@ -6,10 +6,10 @@ namespace HayypCard.Enums
     public enum PlayerGameState
     {
         /// <summary>
-        /// 玩家当前回合出的是牌则没有状态
+        /// 出牌
         /// </summary>
-        [EnumAlias("")] //设置为空串这样当没有状态要显示时就隐藏UI
-        None,
+        [EnumAlias("")] //设置为空串这样当出牌时就隐藏UI
+        OutCard,
 
         /// <summary>
         /// 已经出完牌

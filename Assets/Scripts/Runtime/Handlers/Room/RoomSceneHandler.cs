@@ -83,24 +83,14 @@ namespace HayypCard.Handlers
         /// </summary>
         private void ReceiveStartGame(SyncInfo syncInfo)
         {
-            //同步房间中每个玩家的顺序
             List<string> sequence = JsonConvert.DeserializeObject<List<string>>(syncInfo.Message);
-            List<Player> players = GameDataManager.Instance.RoomInfo.Players;
-            for (int i = 0; i < sequence.Count; i++)
-            {
-                string pID = sequence[i];
-                for (int j = 0; j < players.Count; j++)
-                {
-                    if (players[j].ID == pID && i!=j)
-                    {
-                        //位置互换
-                        Player pj = players[j];
-                        Player pi = players[i];
-                        players[i] = pj;
-                        players[j] = pi;
-                    }
-                }
-            }
+            RoomInfo roomInfo = GameDataManager.Instance.RoomInfo;
+            List<Player> players = roomInfo.Players;
+            List<GamingInfo> gamingInfos = roomInfo.PlayerGamingInfos;
+
+            //保证每个玩家那里的玩家的顺序都是一致的
+            MakeTheSameSequence(players, sequence);
+            MakeTheSameSequence(gamingInfos, sequence);
 
             //切换到Game场景
             SceneManager.LoadScene(nameof(GameScene.Game));
@@ -210,29 +200,32 @@ namespace HayypCard.Handlers
         {
             LogHelper.Info($"\"开始游戏-StartGame\"事件触发");
 
-            //测试
-            SceneManager.LoadScene(nameof(GameScene.Game));
+            Gameplay gameplay = GameDataManager.Instance.GameSetting.Gameplay;
 
-            //Gameplay gameplay = GameDataManager.Instance.GameSetting.Gameplay;
+            if ((!GameDataManager.Instance.RoomInfo.Full && gameplay != Gameplay.ZhaJinHua) || (gameplay == Gameplay.ZhaJinHua && GameDataManager.Instance.RoomInfo.CurrentPeopleNum < 2))
+            {
+                Vue.Router.GetView<TipView>(nameof(GameUI.FastTipView)).Open("当前人数不够,再邀请几个好友一起玩吧!");
+            }
+            else
+            {
+                //发送同步，将房主的好友顺序位置同步到所有玩家（确保每个人在牌桌上的顺序是一致的）
+                RoomInfo roomInfo = GameDataManager.Instance.RoomInfo;
+                List<Player> players = roomInfo.Players;
+                List<GamingInfo> gamingInfos = roomInfo.PlayerGamingInfos;
 
-            //if ((!GameDataManager.Instance.RoomInfo.Full && gameplay != Gameplay.ZhaJinHua) || (gameplay == Gameplay.ZhaJinHua && GameDataManager.Instance.RoomInfo.CurrentPeopleNum < 2))
-            //{
-            //    Vue.Router.GetView<TipView>(nameof(GameUI.FastTipView)).Open("当前人数不够,再邀请几个好友一起玩吧!");
-            //}
-            //else
-            //{
-            //    //发送同步，将房主的好友顺序位置同步到所有玩家（确保每个人在牌桌上的顺序是一致的）
-            //    List<Player> players = GameDataManager.Instance.RoomInfo.Players;
-            //    List<string> sequence = new List<string>(players.Count);
-            //    for (int i = 0; i < players.Count; i++) { sequence.Add(players[i].ID); }
-            //    string message = JsonConvert.SerializeObject(sequence);
+                List<string> sequence = new List<string>(players.Count);
+                for (int i = 0; i < players.Count; i++) { sequence.Add(players[i].ID); }
+                string message = JsonConvert.SerializeObject(sequence);
 
-            //    SyncInfo syncInfo = new SyncInfo() { GameEvent = GameEvent.StartGame, Message=message };
-            //    NetworkManager.Instance.SendSyncInfo(syncInfo);
+                //保证List<GamingInfo>的顺序也是与序列顺序一致的
+                MakeTheSameSequence(gamingInfos, sequence);
 
-            //    //切换到Game场景
-            //    SceneManager.LoadScene(nameof(GameScene.Game));
-            //}
+                SyncInfo syncInfo = new SyncInfo() { GameEvent = GameEvent.StartGame, Message = message };
+                NetworkManager.Instance.SendSyncInfo(syncInfo);
+
+                //切换到Game场景
+                SceneManager.LoadScene(nameof(GameScene.Game));
+            }
         }
         #endregion
 
@@ -378,5 +371,47 @@ namespace HayypCard.Handlers
 
             NetworkManager.Instance.SendSyncInfo(syncInfo);
         }
+
+
+        //---------------------------------------------------------------------------------------------
+        
+        private void MakeTheSameSequence(List<Player> players,List<string> sequence)
+        {
+            for (int i = 0; i < sequence.Count; i++)
+            {
+                string pID = sequence[i];
+                for (int j = 0; j < players.Count; j++)
+                {
+                    if (players[j].ID == pID && i != j)
+                    {
+                        //位置互换
+                        Player pj = players[j];
+                        Player pi = players[i];
+                        players[i] = pj;
+                        players[j] = pi;
+                    }
+                }
+            }
+        }
+
+        private void MakeTheSameSequence(List<GamingInfo> gamingInfos, List<string> sequence)
+        {
+            for (int i = 0; i < sequence.Count; i++)
+            {
+                string pID = sequence[i];
+                for (int j = 0; j < gamingInfos.Count; j++)
+                {
+                    if (gamingInfos[j].PlayerID == pID && i != j)
+                    {
+                        //位置互换
+                        GamingInfo gj = gamingInfos[j];
+                        GamingInfo gi = gamingInfos[i];
+                        gamingInfos[i] = gj;
+                        gamingInfos[j] = gi;
+                    }
+                }
+            }
+        }
+
     }
 }

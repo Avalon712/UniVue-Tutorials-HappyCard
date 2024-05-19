@@ -99,21 +99,10 @@ namespace HappyCard.Network
             if (_idel)
             {
                 byte[] data = ProtocolCodecHelper.Encode(syncInfo);
-               
-                if(syncInfo.ReceiverID == null)
+
+                foreach (var receiveEndPoint in _hostInfos.Values)
                 {
-                    foreach (var receiverID in _hostInfos.Values)
-                    {
-                        _socket.BeginSendTo(data, 0, data.Length, SocketFlags.None, receiverID, SendSyncInfo, null);
-                    }
-                }
-                else if(_hostInfos.ContainsKey(syncInfo.ReceiverID))
-                {
-                    _socket.BeginSendTo(data, 0, data.Length, SocketFlags.None, _hostInfos[syncInfo.ReceiverID], SendSyncInfo, null);
-                }
-                else
-                {
-                    LogHelper.Warn($"不存在玩家ID为{syncInfo.ReceiverID}的主机信息,无法发送UDP单播!");
+                    _socket.BeginSendTo(data, 0, data.Length, SocketFlags.None, receiveEndPoint, SendSyncInfo, null);
                 }
             }
             else

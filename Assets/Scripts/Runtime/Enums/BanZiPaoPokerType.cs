@@ -54,7 +54,7 @@ namespace HayypCard.Enums
         /// <summary>
         /// 大滚龙
         /// </summary>
-        BigSmallLoongBomb,
+        BigLoongBomb,
 
     }
 }
