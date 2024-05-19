@@ -20,6 +20,8 @@
 
 ![游戏对局设置](https://github.com/Avalon712/UniVue-Tutorials-HappyCard/blob/master/imgs/游戏对局设置.png)
 
+![商店](https://github.com/Avalon712/UniVue-Tutorials-HappyCard/blob/master/imgs/商店.png)
+
 ## 二、游戏玩法介绍
 游戏中玩家可以在局域网下和好友一起玩，在没有服务器时，玩家记得及时存档以免数据丢失。在有服务器时会自带存档在服务器上，目前服务器还在开发中。
 ###斗地主
