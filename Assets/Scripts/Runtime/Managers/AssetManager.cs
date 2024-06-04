@@ -3,11 +3,11 @@ using UnityEngine;
 using UniVue.View.Config;
 using HappyCard.Enums;
 using YooAsset;
-using System.Collections;
 using HayypCard.Enums;
 using System.Collections.Generic;
 using HappyCard.Entities;
 using UnityEngine.U2D;
+using HayypCard.Entities;
 
 
 namespace HappyCard.Managers
@@ -23,6 +23,29 @@ namespace HappyCard.Managers
         private const string pokerIconPackageName = "PokerIcon";
         private const string productDataPackageName = "Product";
         private const string propInfoDataPackageName = "PropInfo";
+        private const string taskInfoDataPackageName = "TaskInfo";
+        private const string taskInfoIconPackageName = "TaskIcon";
+
+        //-------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// 获取所有的任务信息
+        /// </summary>
+        /// <returns>List<TaskInfo></returns>
+        public List<TaskInfo> GetTaskInfos()
+        {
+            ResourcePackage package = YooAssets.GetPackage(taskInfoDataPackageName);
+            AssetInfo[] assetInfos = package.GetAssetInfos(taskInfoDataPackageName);
+            List<TaskInfo> taskInfos = new List<TaskInfo>(assetInfos.Length);
+            for (int i = 0; i < assetInfos.Length; i++)
+            {
+                string location = assetInfos[i].AssetPath;
+                TaskInfo taskInfo = package.LoadAssetSync<TaskInfo>(location).AssetObject as TaskInfo;
+                taskInfos.Add(taskInfo);
+            }
+            return taskInfos;
+        }
+
 
         //-------------------------------------------------------------------------------------------------
 
@@ -162,6 +185,10 @@ namespace HappyCard.Managers
                     yield return InitResourcePackage(YooAssets.CreatePackage(productDataPackageName), playMode);
                     //加载产品图标
                     yield return InitResourcePackage(YooAssets.CreatePackage(productIconPackageName), playMode);
+                    //加载任务图标
+                    yield return InitResourcePackage(YooAssets.CreatePackage(taskInfoIconPackageName), playMode);
+                    //加载任务数据
+                    yield return InitResourcePackage(YooAssets.CreatePackage(taskInfoDataPackageName), playMode);
                     break;
 
                 case GameScene.Room:
@@ -196,6 +223,10 @@ namespace HappyCard.Managers
                     YooAssets.DestroyPackage(productDataPackageName);
                     //卸载商店商品的图标
                     YooAssets.DestroyPackage(productIconPackageName);
+                    //卸载任务图标
+                    YooAssets.DestroyPackage(taskInfoIconPackageName);
+                    //卸载任务数据
+                    YooAssets.DestroyPackage(taskInfoDataPackageName);
                     break;
                 case GameScene.Room:
 

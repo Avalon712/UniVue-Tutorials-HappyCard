@@ -1,4 +1,5 @@
 ﻿using HappyCard.Entities;
+using HayypCard.Entities;
 using HayypCard.Enums;
 using UnityEditor;
 using UnityEngine;
@@ -45,6 +46,14 @@ namespace HayypCard.Editor
                 EditorGUILayout.EndHorizontal();
                 EditorGUILayout.Space();
             }
+            else if(_gameDataType == GameDataType.TaskInfo)
+            {
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField("任务名称");
+                _fileName = EditorGUILayout.TextField(_fileName);
+                EditorGUILayout.EndHorizontal();
+                EditorGUILayout.Space();
+            }
 
             EditorGUILayout.LabelField("保存目录");
             _saveDirectory = EditorGUILayout.TextField(_saveDirectory);
@@ -67,6 +76,13 @@ namespace HayypCard.Editor
                     AssetDatabase.CreateAsset(p, $"{_saveDirectory}{p.name}.asset");
                     AssetDatabase.Refresh();
                 }
+                else if (_gameDataType == GameDataType.TaskInfo)
+                {
+                    var p = ScriptableObject.CreateInstance<TaskInfo>();
+                    p.name = _fileName;
+                    AssetDatabase.CreateAsset(p, $"{_saveDirectory}{p.name}.asset");
+                    AssetDatabase.Refresh();
+                }
             }
         }
 
@@ -76,5 +92,6 @@ namespace HayypCard.Editor
     {
         Product,
         PropInfo,
+        TaskInfo
     }
 }

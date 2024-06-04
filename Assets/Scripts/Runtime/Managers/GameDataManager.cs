@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.U2D;
 using UniVue.Utils;
+using static HayypCard.Entities.TaskInfo;
 
 namespace HappyCard.Managers
 {
@@ -34,6 +35,7 @@ namespace HappyCard.Managers
         private NetworkInfo _networkInfo;
         private List<HeadIcon> _headIcons;
         private Dictionary<PokerCard, CardInfo> _pokerIcons;
+        private List<TaskInfo> _taskInfos;
         #endregion
 
         #region 本地静态数据
@@ -249,6 +251,31 @@ namespace HappyCard.Managers
         }
 
         /// <summary>
+        /// 玩家的所有任务进度信息
+        /// </summary>
+        public List<TaskProcess> TaskProcesses => _archiveData.TaskProcesses;
+
+        /// <summary>
+        /// 所有的任务信息
+        /// </summary>
+        public List<TaskInfo> TaskInfos
+        {
+            get
+            {
+                if(_taskInfos == null)
+                {
+                    _taskInfos = AssetManager.Instance.GetTaskInfos();
+                    for (int i = 0; i < _taskInfos.Count; i++)
+                    {
+                        TaskProcess process = TaskProcesses.Find((p) => p.id == _taskInfos[i].ID);
+                        _taskInfos[i].Task = process;
+                    }
+                }
+                return _taskInfos;
+            }
+        }
+
+        /// <summary>
         /// 加载本地存档
         /// </summary>
         public IEnumerator AsyncLoadLocalArchiveData()
@@ -333,6 +360,14 @@ namespace HappyCard.Managers
             }
         }
 
+        /// <summary>
+        /// 卸载任务数据
+        /// </summary>
+        public void UnloadAllTaskInfos()
+        {
+            _taskInfos?.Clear();
+            _taskInfos = null;
+        }
 
         /// <summary>
         /// 卸载商品信息

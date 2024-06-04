@@ -78,6 +78,16 @@
         QuitRoom,
 
         /// <summary>
+        /// 开始匹配事件
+        /// </summary>
+        StartMatch,
+
+        /// <summary>
+        /// 取消匹配事件
+        /// </summary>
+        CancelMatch,
+
+        /// <summary>
         /// 房主销毁房间
         /// </summary>
         DestroyRoom,
@@ -183,6 +193,16 @@
         NoCallLandlord,
 
         /// <summary>
+        /// 抢地主
+        /// </summary>
+        QiangDiZhu,
+
+        /// <summary>
+        /// 不抢地主
+        /// </summary>
+        NoQiangDiZhu,
+
+        /// <summary>
         /// 包牌事件
         /// </summary>
         Bao,
@@ -191,6 +211,16 @@
         /// 玩家不包牌
         /// </summary>
         NoBao,
+
+        /// <summary>
+        /// 反包
+        /// </summary>
+        FanBao,
+
+        /// <summary>
+        /// 不反包
+        /// </summary>
+        NoFanBao,
 
         /// <summary>
         /// 选中牌事件
@@ -216,5 +246,10 @@
         /// 重选
         /// </summary>
         Reset,
+
+        /// <summary>
+        /// 匹配成功事件
+        /// </summary>
+        SuccessMatch,
     }
 }

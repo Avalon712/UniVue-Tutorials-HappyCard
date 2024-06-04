@@ -180,7 +180,10 @@ namespace HappyCard.Managers
             if(GetGameNetworkServiceMode() == NetworkServiceMode.WAN)
                 _tcpService.SendSyncInfo(syncInfo);
             else
+            {
                 _udpService.SendSyncInfo(syncInfo);
+                _offlineService.SimulateSync(syncInfo, OnReceiveSyncInfo);
+            }
             if (handle.Calls != null) { _handles.Add(handle); }
         }
 
@@ -194,7 +197,10 @@ namespace HappyCard.Managers
         public void SendSyncInfo(SyncInfo syncInfo, EndPoint endPoint,ref SyncInfoResponseHandle handle)
         {
             if (GetGameNetworkServiceMode() == NetworkServiceMode.LAN)
+            {
                 _udpService.SendSyncInfo(syncInfo, endPoint);
+                _offlineService.SimulateSync(syncInfo, OnReceiveSyncInfo);
+            }
 
             if (handle.Calls != null)
                 _handles.Add(handle); 
@@ -212,7 +218,11 @@ namespace HappyCard.Managers
                 _tcpService.SendSyncInfo(syncInfo);
 
             else if(mode == NetworkServiceMode.LAN)
+            {
                 _udpService.SendSyncInfo(syncInfo);
+                _offlineService.SimulateSync(syncInfo,OnReceiveSyncInfo);
+            }
+               
         }
 
         //----------------------------------------------------------------------------------------------------

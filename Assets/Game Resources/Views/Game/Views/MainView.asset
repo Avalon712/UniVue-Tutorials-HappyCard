@@ -29,7 +29,7 @@ MonoBehaviour:
   masterViewName: 
   rootViewName: RightPlayerView2
   nestedViews: []
-  content: 
+  content: RightShowOutCardsView2
 --- !u!114 &-5025081226675212891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   masterViewName: 
   rootViewName: LeftPlayerView2
   nestedViews: []
-  content: 
+  content: LeftShowOutCardsView2
 --- !u!114 &-3903201720958283814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   masterViewName: 
   rootViewName: LeftPlayerView1
   nestedViews: []
-  content: 
+  content: LeftShowOutCardsView1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
   masterViewName: 
   rootViewName: RightPlayerView1
   nestedViews: []
-  content: 
+  content: RightShowOutCardsView1
 --- !u!114 &5539733572197965683
 MonoBehaviour:
   m_ObjectHideFlags: 0

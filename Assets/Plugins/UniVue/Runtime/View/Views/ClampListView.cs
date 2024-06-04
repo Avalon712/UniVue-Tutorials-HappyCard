@@ -39,7 +39,7 @@ namespace UniVue.Runtime.View.Views
             _runtime.content = GameObjectFindUtil.BreadthFind(content, viewObject)?.transform;
 
             if (_runtime.content == null)
-                throw new Exception($"未能再ViewObject身上找到名为{content}的GameObject!");
+                throw new Exception($"未能在名为[{name}]的视图的ViewObject身上找到名为{content}的GameObject!");
             
             if (_runtime.content.childCount == 0)
                 throw new Exception($"名字为{content}的GameObject必须有一个子物体作为预制体模板进行预制体克隆!");

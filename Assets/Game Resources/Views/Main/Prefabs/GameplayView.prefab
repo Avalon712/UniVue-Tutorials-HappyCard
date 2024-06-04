@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 3087615278926228450}
   - component: {fileID: 2908949844539863938}
   m_Layer: 5
-  m_Name: GameSetting_allowRecorder_Toggle
+  m_Name: GameSetting_AllowUseRecorder_Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 6578712751769527168}
   - component: {fileID: 7308715092569238787}
   m_Layer: 5
-  m_Name: GameSetting_shuffleMode_Toggle
+  m_Name: GameSetting_ShuffleMode_Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1962,7 +1962,7 @@ GameObject:
   - component: {fileID: 5584180717503952107}
   - component: {fileID: 4978284610266437433}
   m_Layer: 5
-  m_Name: GameSetting_shuffleMode_Toggle
+  m_Name: GameSetting_ShuffleMode_Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3067,7 +3067,7 @@ GameObject:
   - component: {fileID: 7668945727601598873}
   - component: {fileID: 8154695289873546329}
   m_Layer: 5
-  m_Name: GameSetting_allowProp_Toggle
+  m_Name: GameSetting_AllowUseProp_Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3297,7 +3297,7 @@ GameObject:
   - component: {fileID: 118518617750390004}
   - component: {fileID: 3367021900474152535}
   m_Layer: 5
-  m_Name: GameSetting_gameplayMode_Toggle
+  m_Name: GameSetting_Gameplay_Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3556,7 +3556,7 @@ GameObject:
   - component: {fileID: 3590124185717124868}
   - component: {fileID: 4370509837412561214}
   m_Layer: 5
-  m_Name: GameSetting_gameplayMode_Toggle
+  m_Name: GameSetting_Gameplay_Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3965,7 +3965,7 @@ GameObject:
   - component: {fileID: 1116003582806556082}
   - component: {fileID: 2871709865105558644}
   m_Layer: 5
-  m_Name: GameSetting_gameplayMode_Toggle
+  m_Name: GameSetting_Gameplay_Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

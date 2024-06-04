@@ -183,7 +183,7 @@ namespace UniVue.Utils
 #if UNITY_EDITOR
                             else
                             {
-                                LogUtil.Warning("EventCallAutowireAttribute特性只能注解在实现了接口IEventRegister的类上!");
+                                LogUtil.Warning($"类型[{types[i].FullName}]不能注解EventCallAutowireAttribute特性,因为它没有实现了接口IEventRegister的类上!");
                             }
 #endif
                         }

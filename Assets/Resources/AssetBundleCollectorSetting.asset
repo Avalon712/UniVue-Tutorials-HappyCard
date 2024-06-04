@@ -134,35 +134,6 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: Prop
         UserData: 
-    - GroupName: Icon
-      GroupDesc: "\u5546\u54C1\u56FE\u6807"
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/Game Resources/UI/Product Icon
-        CollectorGUID: bd9f2675a64e2164b99c23900c94373b
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/Game Resources/UI/Product Lable Icon
-        CollectorGUID: 25de00c283483c7409bcb3d3bfa383f9
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/Game Resources/UI/Prop Icon
-        CollectorGUID: f8434503f6f239c4289d6302d01f2a87
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
   - PackageName: PropInfo
     PackageDesc: "\u6E38\u620F\u6570\u636E-\u9053\u5177"
     EnableAddressable: 0
@@ -354,6 +325,48 @@ MonoBehaviour:
       Collectors:
       - CollectPath: Assets/Game Resources/UI/Prop Icon
         CollectorGUID: f8434503f6f239c4289d6302d01f2a87
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+  - PackageName: TaskIcon
+    PackageDesc: "\u4EFB\u52A1\u56FE\u6807"
+    EnableAddressable: 0
+    LocationToLower: 0
+    IncludeAssetGUID: 0
+    IgnoreDefaultType: 1
+    AutoCollectShaders: 1
+    Groups:
+    - GroupName: TaskIcon
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Game Resources/UI/TaskInfo Icon
+        CollectorGUID: 7b5aee4bf3342574bb9bdf80dc09bba7
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+  - PackageName: TaskInfo
+    PackageDesc: "\u4EFB\u52A1\u6570\u636E"
+    EnableAddressable: 0
+    LocationToLower: 0
+    IncludeAssetGUID: 0
+    IgnoreDefaultType: 1
+    AutoCollectShaders: 1
+    Groups:
+    - GroupName: TaskInfo
+      GroupDesc: 
+      AssetTags: TaskInfo
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Game Data/TaskInfo
+        CollectorGUID: d9964fb13393c884e8d20218d305b1c0
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory

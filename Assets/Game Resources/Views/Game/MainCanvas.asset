@@ -15,15 +15,17 @@ MonoBehaviour:
   canvasName: Canvas
   views:
   - {fileID: 11400000, guid: 3e71a7c80dc45de42b7435b8b0f7c019, type: 2}
+  - {fileID: 11400000, guid: 0d853f31fec7c764a90dd0dd9812f34a, type: 2}
+  - {fileID: 11400000, guid: e4a10601f67fb8540b8964e56d7d063e, type: 2}
   - {fileID: 11400000, guid: ea4e47459a7e17b40a63703b4d6a49be, type: 2}
+  - {fileID: 11400000, guid: 4cc730ea8b878ad449e54201c754e63e, type: 2}
   - {fileID: 11400000, guid: 7b1b460ac62f7644d8b66b0a6d37bf7c, type: 2}
   - {fileID: 11400000, guid: 3c214ae43015f6d4b9197a0836ee12ec, type: 2}
   - {fileID: 11400000, guid: 707c12b3ca136f041b8f92cacb09acd3, type: 2}
   - {fileID: 11400000, guid: 29d9e4d7cffe5d042b99008772494f9a, type: 2}
   - {fileID: 11400000, guid: 0220e88896a2fd149aab99e63ea33481, type: 2}
-  - {fileID: 11400000, guid: ef1b91c8a01adc743b3f77247adb7b8d, type: 2}
   - {fileID: 11400000, guid: 211c0a3279f05d04785ccc974b52144b, type: 2}
-  - {fileID: 11400000, guid: caa7f532679fd29458c5ef465afd52c8, type: 2}
+  - {fileID: 11400000, guid: ef1b91c8a01adc743b3f77247adb7b8d, type: 2}
   - {fileID: 11400000, guid: b6a3085e9d390294c8aa34d7fe3ee56a, type: 2}
   - {fileID: 11400000, guid: f4599df8b3b60224db146a84c5ae6dc2, type: 2}
   - {fileID: 11400000, guid: dc8ad07c64802714f845b79cb9d1eac7, type: 2}

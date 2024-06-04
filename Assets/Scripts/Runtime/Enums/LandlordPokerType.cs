@@ -1,8 +1,9 @@
 ﻿
+
 namespace HayypCard.Enums
 {
     /// <summary>
-    /// 斗地主出牌类型
+    /// 斗地主中出牌的所有类型
     /// </summary>
     public enum LandlordPokerType
     {
@@ -29,7 +30,7 @@ namespace HayypCard.Enums
         /// <summary>
         /// 连对
         /// </summary>
-        LiandDui,
+        LianDui,
 
         /// <summary>
         /// 斗地主单出三张牌

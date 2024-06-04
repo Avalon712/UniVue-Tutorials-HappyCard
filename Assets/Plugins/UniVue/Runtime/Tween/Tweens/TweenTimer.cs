@@ -83,6 +83,7 @@ namespace UniVue.Tween.Tweens
             _tasks();
             if (--_executeNum == 0)
             {
+                _OnComplete?.Invoke();
                 //将下一个序列动画进行播放
                 if (next != null) { next.Play(); }
                 return true;
@@ -93,6 +94,7 @@ namespace UniVue.Tween.Tweens
 
         public override void Reset()
         {
+            base.Reset();
             _tasks = null;
             _interval = _delay = 0;
             _executeNum = 1;

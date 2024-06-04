@@ -52,9 +52,26 @@ namespace HappyCard.Network
         /// <summary>
         /// 单机模拟
         /// </summary>
-        public void SimulateSync(SyncInfo syncInfo)
+        public void SimulateSync(SyncInfo syncInfo,Action<SyncInfo> receiveSync)
         {
+            switch (syncInfo.GameEvent)
+            {
+                case GameEvent.StartMatch:
+                    break;
+                case GameEvent.SuccessMatch:
+                    break;
+            }
+        }
 
+        //------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// 离线模式下的匹配模式为单机模式
+        /// </summary>
+        private SyncInfo Match()
+        {
+            //TODO
+            return null;
         }
 
         //------------------------------------------------------------------------------------------------

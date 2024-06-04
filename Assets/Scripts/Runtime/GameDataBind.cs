@@ -1,10 +1,10 @@
 ﻿using HappyCard.Entities;
 using HappyCard.Enums;
-using HappyCard.Handlers;
 using HappyCard.Managers;
 using HappyCard.Utils;
 using HayypCard.Entities;
 using HayypCard.Enums;
+using HayypCard.UI;
 using System.Collections.Generic;
 using UniVue;
 using UniVue.Runtime.View.Views;
@@ -72,7 +72,7 @@ namespace HayypCard
             }
 
             //3. 自动登录检查
-            Vue.Event.GetRegister<LoginSceneHandler>().AutoLogin();
+            Vue.Event.GetRegister<LoginUI>().AutoLogin();
         }
 
         private void DisposeLoginScene()
@@ -114,16 +114,21 @@ namespace HayypCard
             //7 读取玩家的对局记录数据，同时绑定到BattleRecordView上（这个视图也可以用于显示好友的对局记录信息）
             Vue.Router.GetView<ListView>(nameof(GameUI.BattleRecordView)).BindData(GameDataManager.Instance.BattleRecord);
 
-            //8 绑定游戏设置GameSetting数据到设置视图、创建房间视图
+            //8 绑定游戏设置GameSetting数据到设置视图、创建房间视图、游戏玩法视图
             GameDataManager.Instance.GameSetting.Bind(nameof(GameUI.SettingView));
             GameDataManager.Instance.GameSetting.Bind(nameof(GameUI.CreateRoomView));
+            GameDataManager.Instance.GameSetting.Bind(nameof(GameUI.GameplayView));
 
+            //9 绑定任务数据到TaskView视图
+            Vue.Router.GetView<ListView>(nameof(GameUI.TaskView)).BindData(GameDataManager.Instance.TaskInfos);
         }
 
         private void DisposeMainScene()
         {
             //卸载商店信息
             GameDataManager.Instance.UnloadAllProducts();
+            //卸载任务信息
+            GameDataManager.Instance.UnloadAllTaskInfos();
         }
 
         //-----------------------------------------房间场景---------------------------------------------
@@ -187,12 +192,13 @@ namespace HayypCard
 
             //8. 绑定扑克信息到ListCardView和ShowOutCardsView上
             Vue.Router.GetView<ClampListView>(nameof(GameUI.ListCardView)).BindData(new List<CardInfo>());
-            Vue.Router.GetView<ClampListView>(nameof(GameUI.ShowOutCardsView)).BindData(new List<CardInfo>());
+            Vue.Router.GetView<ClampListView>(nameof(GameUI.ListOutCardView)).BindData(new List<CardInfo>());
         }
 
         private void DisposeGameScene()
         {
-            //None
+            //卸载所有的扑克牌图标
+            GameDataManager.Instance.UnloadAllPokerIcons();
         }
     }
 }

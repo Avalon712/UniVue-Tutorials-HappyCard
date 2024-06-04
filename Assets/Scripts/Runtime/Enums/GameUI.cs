@@ -172,44 +172,64 @@ namespace HappyCard.Enums
         RightPlayerView2,
 
         /// <summary>
-        /// 玩家准备视图，Game场景中玩家点击准备后就开始准备发牌  -----（CardView的嵌套视图）
-        /// </summary>
-        PrepareOperationView,
-
-        /// <summary>
-        /// 出牌选项视图  ----（CardView的嵌套视图）
-        /// </summary>
-        OutCardOperationView,
-
-        /// <summary>
-        /// 板子炮玩法下，开始出牌前玩家进行的流程：包、不包 ----（CardView的嵌套视图）
-        /// </summary>
-        BanZiPaoOptionalView,
-
-        /// <summary>
-        /// 斗地主玩法下，开始出牌前玩家进行的流程：叫地主、不叫 -----（CardView的嵌套视图）
-        /// </summary>
-        FightLandlordOptionalView,
-
-        /// <summary>
-        /// 炸金花玩法下，玩家的选项 ------- （CardView的嵌套视图）
-        /// </summary>
-        ZhanJinHuaOptionalView,
-
-        /// <summary>
-        /// 显示当前玩家出的牌的视图 ------- （CardView的嵌套视图）
-        /// </summary>
-        ShowOutCardsView,
-
-        /// <summary>
-        /// 显示玩家手牌的视图 ------- （CardView的嵌套视图）
+        /// 显示当前玩家手牌的视图 
         /// </summary>
         ListCardView,
 
         /// <summary>
-        /// 显示玩家的出牌、手牌、操作选项等的总视图
+        /// 根据当前回合阶段显示指定选项的视图
         /// </summary>
-        CardView,
+        BoutPhaseView,
+
+        /// <summary>
+        /// 准备阶段视图 ------- BoutPhaseView的嵌套视图
+        /// </summary>
+        PreparePhaseView,
+
+        /// <summary>
+        /// 板子炮选择包、不包阶段------- BoutPhaseView的嵌套视图
+        /// </summary>
+        BaoPhaseView,
+
+        /// <summary>
+        /// 板子炮反包、不反包阶段------- BoutPhaseView的嵌套视图
+        /// </summary>
+        FanBaoPhaseView,
+
+        /// <summary>
+        /// 叫地主阶段------- BoutPhaseView的嵌套视图
+        /// </summary>
+        JiaoDiZhuPhaseView,
+
+        /// <summary>
+        /// 板子炮叫队友阶段------- BoutPhaseView的嵌套视图
+        /// </summary>
+        JiaoDuiYouPhaseView,
+
+        /// <summary>
+        /// 出牌阶段------- BoutPhaseView的嵌套视图
+        /// </summary>
+        OutCardPhaseView,
+
+        /// <summary>
+        /// 显示阶段做选择的定时器------- BoutPhaseView的嵌套视图
+        /// </summary>
+        PhaseTimerView,
+
+        /// <summary>
+        /// 抢地主阶段------- BoutPhaseView的嵌套视图
+        /// </summary>
+        QiangJiaoDiZhuPhaseView,
+
+        /// <summary>
+        /// 炸金花阶段------- BoutPhaseView的嵌套视图
+        /// </summary>
+        ZhaJinHuaOutCardPhaseView,
+
+        /// <summary>
+        /// 显示当前玩家出的牌的视图
+        /// </summary>
+        ListOutCardView,
 
         /// <summary>
         /// 左边第一个玩家显示出牌的视图 -- LeftPlayerView1的嵌套视图
@@ -250,5 +270,20 @@ namespace HappyCard.Enums
         /// 右边第二个玩家的定时器视图-- RightPlayerView2的嵌套视图
         /// </summary>
         RightTimerView2,
+
+        /// <summary>
+        /// 游戏匹配玩法设置视图 -- Main场景
+        /// </summary>
+        GameplayView,
+
+        /// <summary>
+        /// 正在匹配中的视图 -- Main场景
+        /// </summary>
+        MatchingView,
+
+        /// <summary>
+        /// 任务列表
+        /// </summary>
+        TaskView,
     }
 }
